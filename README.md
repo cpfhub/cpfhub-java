@@ -30,7 +30,7 @@ Este SDK foi projetado para oferecer uma integração fluida e eficiente da API 
 
 Para facilitar a integração com agentes de IA e LLMs, este SDK e a API do CPFHub.io oferecem:
 
-*   **OpenAPI Specification**: Um arquivo `openapi.yaml` está disponível para descrever a API, permitindo que agentes entendam automaticamente sua estrutura e schemas tipados.
+*   **OpenAPI Specification**: A especificação oficial da API está disponível no repositório [cpfhub-openapi](https://github.com/cpfhub/cpfhub-openapi), permitindo que agentes entendam automaticamente sua estrutura e schemas tipados.
 *   **Tool Descriptions**: A API é facilmente representável como "tool descriptions" para LLMs, facilitando a invocação em frameworks de agentes.
 *   **MCP Server Nativo**: O CPFHub.io oferece um servidor MCP que expõe a API diretamente para agentes de IA (Claude, Cursor, Windsurf), complementando o uso em ambientes de desenvolvimento Java.
 
@@ -105,6 +105,9 @@ future.thenAccept(result -> System.out.println(result.getName()));
 ### `new CPFHubClient(String apiKey, CPFHubConfig config)`
 
 ```java
+import java.time.Duration;
+import io.cpfhub.CPFHubConfig;
+
 CPFHubConfig config = CPFHubConfig.builder()
     .timeout(Duration.ofSeconds(5))
     .baseUrl("https://api.cpfhub.io")
@@ -162,6 +165,11 @@ try {
 
 ```java
 // CPFHubConfig.java
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import io.cpfhub.CPFHubClient;
+
 @Configuration
 public class CPFHubConfig {
     @Value("${cpfhub.api-key}")
@@ -176,6 +184,10 @@ public class CPFHubConfig {
 
 ```java
 // OnboardingService.java
+import org.springframework.stereotype.Service;
+import io.cpfhub.CPFHubClient;
+import io.cpfhub.CPFResult;
+
 @Service
 public class OnboardingService {
     private final CPFHubClient cpfHubClient;
@@ -200,6 +212,12 @@ cpfhub:
 ### Kotlin (Android / JVM)
 
 ```kotlin
+import io.cpfhub.CPFHubClient;
+import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.launch;
+import kotlinx.coroutines.withContext;
+import androidx.lifecycle.viewModelScope; // Assuming Android ViewModel context
+
 val client = CPFHubClient(BuildConfig.CPFHUB_API_KEY)
 
 viewModelScope.launch {
@@ -221,6 +239,8 @@ viewModelScope.launch {
 | Corporate / Corporativo | Custom / Personalizado |
 
 The SDK automatically retries on `429` with exponential backoff (up to 3 attempts).
+
+> O SDK faz retry automático em `429` com backoff exponencial (até 3 tentativas).
 
 ---
 
@@ -250,7 +270,7 @@ The SDK automatically retries on `429` with exponential backoff (up to 3 attempt
 - [Maven Central](https://central.sonatype.com/artifact/io.cpfhub/cpfhub-java)
 - [Status Page](https://app.cpfhub.io/status)
 - [LGPD Compliance](https://cpfhub.io/lgpd)
-- [OpenAPI Specification](openapi.yaml)
+- [OpenAPI Specification](https://github.com/cpfhub/cpfhub-openapi/blob/main/openapi.yaml)
 
 ---
 
