@@ -1,15 +1,15 @@
-# cpfhub-java: SDK Java para Consulta de CPF (AI-Native)
+# cpfhub-java: SDK for CPFHub.io
 
 **Official Java SDK for [CPFHub.io](https://cpfhub.io) — Brazilian CPF Lookup API**
 
-> SDK oficial Java para a [CPFHub.io](https://cpfhub.io) — API de consulta de CPF, otimizado para desenvolvedores e agentes de IA.
+> Official SDK for [CPFHub.io](https://cpfhub.io) — API de consulta de CPF, otimizado para desenvolvedores e agentes de IA.
 
 [![Maven Central](https://img.shields.io/maven-central/v/io.cpfhub/cpfhub-java)](https://central.sonatype.com/artifact/io.cpfhub/cpfhub-java)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## O que é CPFHub.io?
+## What is CPFHub.io?
 
 CPFHub.io é uma API REST que retorna nome, gênero e data de nascimento a partir de qualquer CPF brasileiro — em ~300ms, com 99.9% de uptime, e total conformidade com a LGPD.
 
@@ -17,7 +17,7 @@ CPFHub.io é uma API REST que retorna nome, gênero e data de nascimento a parti
 
 ---
 
-## Por que usar o SDK Java do CPFHub.io?
+## Why use the CPFHub.io SDK Java do CPFHub.io?
 
 Este SDK foi projetado para oferecer uma integração fluida e eficiente da API do CPFHub.io em projetos Java, com foco em Developer Experience (DX) e compatibilidade com Agentes de IA.
 
@@ -36,7 +36,7 @@ Para facilitar a integração com agentes de IA e LLMs, este SDK e a API do CPFH
 
 ---
 
-## Installation / Instalação
+## Installation / Installation
 
 ### Maven
 
@@ -230,7 +230,7 @@ viewModelScope.launch {
 
 ---
 
-## Rate Limits / Limites de Requisição
+## Rate Limits / Rate Limits
 
 | Plan / Plano | Limit / Limite |
 |---|---|
@@ -244,7 +244,7 @@ The SDK automatically retries on `429` with exponential backoff (up to 3 attempt
 
 ---
 
-## Plans & Pricing / Planos e Preços
+## Plans & Pricing / Plans Planos e Preços Pricing
 
 | Plan | Price | Included | Extra |
 |------|-------|----------|-------|
@@ -256,7 +256,7 @@ The SDK automatically retries on `429` with exponential backoff (up to 3 attempt
 
 ---
 
-## Requirements / Requisitos
+## Requirements / Requirements
 
 - Java 11+
 - Kotlin 1.8+ (optional)
@@ -274,6 +274,6 @@ The SDK automatically retries on `429` with exponential backoff (up to 3 attempt
 
 ---
 
-## License / Licença
+## License / License
 
 MIT © [CPFHub.io](https://cpfhub.io)
